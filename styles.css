@@ -1,0 +1,677 @@
+:root {
+    --rosewater: #dabcae;
+    --flamingo: #f2cdcd;
+    --pink: #f5c2e7;
+    --mauve: #cba6f7;
+    --red: #f38ba8;
+    --maroon: #eba0ac;
+    --peach: #fab387;
+    --peachedit: #ecd093;
+    --peachedit2: #e9bb77;
+    --yellow: #f9e2af;
+    --green: #a6e3a1;
+    --teal: #94e2d5;
+    --sky: #89dceb;
+    --sapphire: #74c7ec;
+    --blue: #89b4fa;
+    --lavender: #b4befe;
+    --text: #cdd6f4;
+    --subtext1: #bac2de;
+    --subtext0: #a6adc8;
+    --overlay2: #9399b2;
+    --overlay1: #7f849c;
+    --overlay0: #6c7086;
+    --surface2: #585b70;
+    --surface1: #45475a;
+    --surface1: #282936;
+    --base: #1e1e2e;
+    --mantle: rgba(24, 24, 37, 0.5);
+    --crust: rgba(17, 17, 27, 0.5);
+
+    /* --- Biến cho Quick Launch (Chỉ dùng cho popup) --- */
+    --ql-background: var(--base);
+    --ql-background2: var(--surface2);
+    --ql-border: var(--surface2);
+    --ql-hover: rgba(255, 255, 255, 0.1);
+    --ql-subtext: var(--subtext0);
+    --ql-font-size: 14px;
+    --ql-font-size-large: 16px;
+    --ql-icon-size: 16px;
+    --ql-border-radius: 8px;
+    --ql-icons-font: "Segoe MDL2 Symbols";
+    --ql-system-font: "Segoe UI"; /* Dùng Segoe UI cho popup để dễ đọc hơn */
+}
+*{
+    margin: 0;
+    padding: 0;
+    color: #bec8e7;
+    font-weight: 600;
+    font-family: "JetBrainsMono NFP";
+    margin: 0;
+    padding: 0;
+}
+/*GENERAL CONFIGRATIONS*/
+.yasb-bar {
+	padding: 0;
+	margin: 0;
+}
+.widget {
+    padding: 0 2px;
+    margin: 0 2px;
+    border-radius: 12px;
+}
+/*GLOBAL CLICK FEEDBACK ANIMATION*/
+.widget-container {
+    opacity: 1.0;
+    transition: opacity 90ms ease-out, background-color 150ms ease-in-out;
+}
+.widget-container:clicked,
+.widget-container:pressed {
+    opacity: 0.55;
+}
+.widget .icon {
+    font-size: 18px;
+}
+.widget .label {
+    color: var(--text);
+}
+/*HOME WIDGET*/
+.home-widget {
+    background-color: var(--surface1);
+    padding-right: 7px;
+    padding-left: 7px;
+    padding-bottom: 1px;
+    transition: background-color 150ms ease-in-out;
+}
+.home-widget:hover {
+    background-color: var(--surface2);
+}
+/*HOME WIDGET DROPDOWN*/
+.home-menu {
+    background-color: var(--mantle);
+    border-radius: 8px;
+    padding: 0;
+    margin-left: 0px;
+}
+.home-menu .menu-item {
+    padding: 6px 48px 7px 16px;
+    font-size: 12px;
+    font-family: 'Segoe UI';
+    ; 
+    font-weight: 600;
+    transition: background-color 150ms ease-in-out, color 150ms ease-in-out;
+}
+.home-menu .menu-item:hover {
+    background-color:rgba(128, 130, 158, 0.15);
+    color: #ffffff;
+}
+.home-menu .separator {
+    max-height: 1px;
+    background-color:rgba(128, 130, 158, 0.3);
+}
+/*KOMOREBI WORKSPACES WIDGET*/
+.komorebi-workspaces {
+    background-color: var(--surface1);
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-right: 6px;
+    padding-left: 6px;
+}
+.komorebi-workspaces .offline-status {
+    color: #6c7086;
+    font-size: 12px;
+    padding: 0 4px;
+    font-weight: 600;
+}
+.komorebi-workspaces .ws-btn {
+    border: none;
+    background-color: var(--overlay2);
+    margin: 0px 4px;
+    padding: 0;
+    color: rgba(65, 60, 60, 0);;
+    border-radius: 5px;
+    height: 10px;
+    width: 10px;
+    transition: all 220ms ease-out;
+}
+.komorebi-workspaces .ws-btn.populated {
+    background-color: var(--sky);
+}
+.komorebi-workspaces .ws-btn.active {
+    color: rgba(149, 177, 255, 0);
+    background-color: var(--teal);
+    width: 36px;
+    height: 10px;
+    border-radius: 4px;
+}
+/*WEATHER WIDGET*/
+.weather-widget {
+    background-color: var(--surface1);
+    padding-right: 10px;
+    transition: background-color 150ms ease-in-out;
+}
+.weather-widget:hover {
+    background-color: var(--surface2);
+}
+.weather-widget .icon {
+    color: var(--yellow);
+    padding: 6px;
+    transition: text-shadow 200ms ease-in-out;
+}
+.weather-widget:hover .icon {
+    text-shadow: 0 0 10px var(--yellow);
+}
+.weather-widget .label {
+    font-size: 14px;
+    ;
+}
+/*ACTIVE WINDOW WIDGET*/
+.active-window-widget {
+    background-color: var(--surface1);
+    padding-right: 10px;
+    padding-left: 10px;
+    transition: background-color 150ms ease-in-out;
+}
+.active-window-widget:hover {
+    background-color: var(--surface2);
+}
+.active-window-widget .label {
+    font-size: 14px;
+}
+.active-window-widget .icon {
+    padding-right: 6px;
+    border: none;
+}
+/*CLOCK - CALENDAR WIDGET*/
+.clock-widget {
+    background-color: var(--surface1);
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: background-color 150ms ease-in-out;
+}
+.clock-widget:hover {
+    background-color: var(--surface2);
+}
+.clock-widget .label {
+    font-size: 14px;
+}
+/*CLOCK - CALENDAR WIDGET DROPDOWN*/
+.calendar {
+    background-color: var(--mantle);
+}
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+    background-color: rgba(17, 17, 27, 0);
+    color: rgba(162, 177, 196, 0.85);
+    font-family: 'Segoe UI';
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;  
+}
+.calendar .calendar-table::item:selected {
+    color: rgb(255, 255, 255);
+}
+.calendar .day-label {
+    margin-top: 20px;
+}
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+    font-family: 'Segoe UI';
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 700;
+    min-width: 180px;
+    max-width: 180px;
+}
+.calendar .month-label {
+    font-weight: normal;
+}
+.calendar .date-label {
+    font-size: 88px;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    margin-top: -20px;
+}
+/*DISK WIDGET*/
+.disk-widget {
+    padding-right: 7px;
+    padding-left: 7px;
+    background-color: var(--surface1);
+}
+/*DISK DROPDOWN*/
+.disk-group {
+    background-color: var(--mantle);    
+}
+.disk-group-row {
+    min-width: 220px;
+    max-width: 220px;
+    max-height: 40px;
+    margin: 0;
+    padding: 0;
+    border-radius: 6px;
+    border: 1px solid rgba(128, 128, 128, 0);
+    transition: background-color 150ms ease-in-out, border 150ms ease-in-out;
+}
+.disk-group-row:hover {
+    background-color:rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.disk-group-label-bar{
+    max-height: 8px;
+    border:0px solid rgba(128, 128, 128, 0);
+    background-color: rgba(148, 226, 213, 0.3);
+    border-radius: 4px;
+}
+.disk-group-label-bar::chunk{
+    background-color: rgba(148, 226, 213, 1);
+    border-radius: 4px;
+}
+.disk-group-label {
+    font-size: 13px;
+}
+.disk-group-label-size {
+    font-size: 12px;
+    color: rgba(205, 214, 244, 0.5);
+}
+/*AUDIO WIDGET*/
+.volume-widget {
+    padding-right: 9px;
+    padding-left: 5px;
+    background-color: var(--surface1);
+    transition: background-color 150ms ease-in-out;
+}
+.volume-widget:hover {
+    background-color: var(--surface2);
+}
+.volume-widget .icon {
+    padding: 0 6px;
+    color: var(--teal);
+    transition: text-shadow 200ms ease-in-out;
+}
+.volume-widget:hover .icon {
+    text-shadow: 0 0 10px var(--teal);
+}
+.volume-widget .label {
+    font-size: 14px;
+}
+/*AUDIO DROPDOWN*/
+.audio-menu {
+    background-color: var(--mantle);
+}
+.audio-container .device {
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    padding:6px 8px 6px 4px;
+    margin: 2px 0;
+    font-size: 12px;
+    border-radius: 4px;
+}
+.audio-container .device.selected {
+    background-color: rgba(255, 255, 255, 0.085);
+}
+.audio-container .device:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+/*MEDIA WIDGET*/
+.media-widget {
+	padding: 0;
+    padding-right: 10px;
+    background-color: var(--surface1);
+    transition: background-color 150ms ease-in-out;
+}
+.media-widget:hover {
+    background-color: var(--surface2);
+}
+.media-widget .label {
+    font-size: 14px;
+    padding: 0 0px;
+    max-width: 210px;
+}
+.media-widget .btn {
+    color: var(--lavender);
+    padding: 0 0px;   
+    margin: 0 0px;        
+    transition: color 150ms ease-in-out, text-shadow 150ms ease-in-out;
+}
+.media-widget .btn:hover {
+    color: var(--pink);
+    text-shadow: 0 0 8px var(--pink);
+}
+.media-widget .btn:pressed {
+    color: var(--mauve);
+}
+.media-widget .icon{
+    padding: 0 6px;
+}
+/*WALLPAPERS WIDGET*/
+.wallpapers-widget {
+    padding-right: 7px;
+    padding-left: 7px;
+    background-color: var(--surface1);
+    transition: background-color 150ms ease-in-out;
+}
+.wallpapers-widget:hover {
+    background-color: var(--surface2);
+}
+/*WALLPAPERS GALLERY*/
+.wallpapers-gallery-window {
+    background-color: var(--mantle);
+    border: 0;
+    margin: 0;
+}
+.wallpapers-gallery-buttons {
+    font-size: 12px;
+    font-family: 'Bahnschrift';
+    background-color:rgba(255, 255, 255, 0);
+    color: white;
+    border: none;
+    font-size: 14px;
+    padding: 8px 0;
+    border-radius: 8px;
+    margin:0 8px 8px 8px;
+    width: 600px;
+    transition: background-color 150ms ease-in-out, opacity 100ms ease-out;
+}
+.wallpapers-gallery-buttons:hover {
+    background-color:rgba(255, 255, 255, 0.1)
+}
+.wallpapers-gallery-buttons:pressed,
+.wallpapers-gallery-buttons:clicked {
+    background-color:rgba(255, 255, 255, 0.18);
+    opacity: 0.7;
+}
+.wallpapers-gallery-image {
+    border: 4px solid transparent;
+    border-radius: 10px;
+    transition: border 200ms ease-in-out;
+}
+.wallpapers-gallery-image:hover {
+    border: 4px solid rgb(66, 68, 83);
+}
+.wallpapers-gallery-image.focused {
+    border: 4px solid #89b4fa;
+}
+/*POWER WIDGET*/
+.power-menu-widget {
+    padding-right: 7px;
+    padding-left: 7px;
+    background-color: var(--surface1);
+    transition: background-color 250ms ease-in-out;
+}
+.power-menu-widget:hover {
+    background-color: var(--surface2);
+}
+.power-menu-widget .label {
+	color: var(--red);
+    font-size: 16px;
+    transition: text-shadow 200ms ease-in-out;
+}
+.power-menu-widget:hover .label {
+    text-shadow: 0 0 10px var(--red);
+}
+/*POWER MENU POPUP*/
+.uptime {
+	font-size: 14px;
+	margin-bottom: 10px;
+	color: rgba(191, 202, 219, 0.726);
+	font-weight: 600;
+	font-family: "Bahnschrift";
+}
+.power-menu-popup .button {
+	padding: 0;
+	width: 160px;
+	height: 240px;
+	border-radius: 4px;
+	background-color: rgba(41, 42, 58, 0.75);
+	font-family: "Bahnschrift";
+	color: white;
+	border: 4px solid rgba(255, 255, 255, 0);
+	transition: background-color 150ms ease-in-out, border 150ms ease-in-out;
+}
+.power-menu-popup .button.hover {
+	background-color: rgb(55, 56, 75);
+	border: 4px solid rgb(55, 56, 75);
+}
+.power-menu-popup .button .label {
+	margin-bottom: 8px;
+	font-size: 16px;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.6);
+	font-family: "Bahnschrift";
+}
+.power-menu-popup .button .icon {
+	font-size: 64px;
+	padding-top: 54px;
+	color: rgba(255, 255, 255, 0.25);
+}
+.power-menu-popup .button.cancel .icon {
+	color: rgba(243, 139, 168, 0.55);
+}
+.power-menu-popup .button.cancel .label {
+	color: rgba(243, 139, 168, 0.95);
+}
+.cava-widget {
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--surface1);
+    transition: background-color 150ms ease-in-out;
+}
+.cava-widget:hover {
+    background-color: var(--surface2);
+}
+/*GITHUB DROPDOWN*/
+.github-widget {
+    padding-right: 7px;
+    padding-left: 7px;
+    background-color: var(--surface1);
+    transition: background-color 150ms ease-in-out;
+}
+.github-widget:hover {
+    background-color: var(--surface2);
+}
+.github-widget .icon {
+    font-size: 16px;
+}
+.github-menu    {
+    background-color:  rgba(17, 17, 27, 0.2);
+    max-height: 500px;
+    min-height: 500px;
+    min-width: 420px;
+}
+.github-menu .header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Segoe UI';
+    padding: 8px;
+    color: white;
+    background-color: rgba(17, 17, 27, 0.75);
+}
+.github-menu .footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 12px;
+    padding: 4px 8px 6px 8px;
+    font-family: 'Segoe UI';
+    color: #9399b2;
+    background-color: rgba(17, 17, 27, 0.75);
+}
+.github-menu .contents {
+    background-color:  rgba(17, 17, 27, 0.2);
+}
+.github-menu .contents .item {
+    min-height: 40px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.075);
+    transition: background-color 150ms ease-in-out, border 150ms ease-in-out;
+}
+.github-menu .contents .item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+}
+.github-menu .contents .item .title,
+.github-menu .contents .item .description {
+    color: #9399b2;
+    font-family: Segoe UI;
+}
+.github-menu .contents .item .title {
+    font-size: 14px;
+    font-weight: 600; 
+}
+.github-menu .contents .item .description {
+    font-size: 12px;
+    font-weight: 500
+}
+.github-menu .contents .item.new .title,
+.github-menu .contents .item.new .description {
+    color: #ffffff
+}
+.github-menu .contents .item .icon {
+    font-size: 16px;
+    padding-right: 0;
+    padding-left: 8px;
+    padding-right: 4px;
+    color: #9399b2;
+}
+.github-menu .contents .item.new .icon {
+    color: #3fb950;
+}
+/* Launcher */
+/* Quick Launch Widget */
+.quick-launch-widget .icon {
+	font-size: var(--fontSize);
+	padding: 0 4px;
+    color: var(--text);
+}
+/* Quick Launch Popup - main window */
+/* --- STYLE RIÊNG CHO QUICK LAUNCH --- */
+/* Chỉ áp dụng khi có class .quick-launch-popup */
+.quick-launch-popup .container {
+    background-color: var(--ql-background);
+    border: 1px solid var(--ql-border);
+    border-radius: var(--ql-border-radius);
+}
+
+.quick-launch-popup .search {
+    padding: 12px 16px;
+    background-color: transparent;
+    border-bottom: 1px solid var(--ql-background2);
+}
+
+.quick-launch-popup .search .loader-line {
+    color: #449bff;
+}
+
+.quick-launch-popup .search .search-icon,
+.quick-launch-popup .search .search-submit-icon {
+    font-family: var(--ql-icons-font);
+    font-size: 18px;
+    color: var(--text);
+    min-width: 18px;
+}
+
+.quick-launch-popup .search .search-input {
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-size: var(--ql-font-size);
+    font-family: var(--ql-system-font);
+    font-weight: 400;
+    padding: 4px 0;
+}
+
+.quick-launch-popup .search .prefix {
+    background: #2167d8;
+    border-radius: 6px;
+    color: var(--text);
+    padding: 0 8px;
+    margin-top: 2px;
+    margin-right: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: var(--ql-system-font);
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.quick-launch-popup .results {
+    background: transparent;
+    padding: 8px;
+}
+
+.quick-launch-popup .results-list-view {
+    font-size: var(--ql-font-size-large);
+    font-family: var(--ql-system-font);
+    font-weight: 600;
+    color: var(--text);
+}
+
+.quick-launch-popup .results-list-view .description {
+    color: var(--ql-subtext);
+    font-size: 11px;
+    font-family: var(--ql-system-font);
+    font-weight: 400; /* Giảm weight để không bị dày */
+}
+
+.quick-launch-popup .results-list-view .separator {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    font-family: var(--ql-system-font);
+    font-weight: 600;
+    padding: 4px 0 4px 12px;
+}
+
+.quick-launch-popup .results-list-view::item {
+    padding: 10px;
+    margin-top: 4px;
+    border-radius: var(--ql-border-radius);
+    margin-left: 4px;
+    margin-right: 4px;
+}
+/* Note: ::item is a sub-control, so YASB's animation engine can't transition
+   it directly (see Animation limitations). The hover/selected state below
+   still applies instantly. */
+
+.quick-launch-popup .results-list-view::item:hover,
+.quick-launch-popup .results-list-view::item:selected {
+    background-color: var(--ql-hover);
+    border-radius: var(--ql-border-radius);
+}
+
+.quick-launch-popup .results-empty-text {
+    font-size: 22px;
+    font-family: var(--ql-system-font);
+    color: var(--text);
+    padding-top: 8px;
+}
+.quick-launch-widget {
+    background-color: var(--surface1);
+    padding: 0 10px; /* Khoảng cách trái phải giống widget khác */
+    margin: 0 2px;   /* Khoảng cách giữa các widget */
+    border-radius: 12px; /* Bo tròn góc giống widget khác */
+    display: flex;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.quick-launch-widget:hover {
+    background-color: var(--surface2); /* Đổi màu nền khi hover */
+}
+
+.quick-launch-widget .icon {
+    font-size: 13px;
+    color: var(--text);
+    font-family: "Segoe MDL2 Symbols";
+    line-height: 1;
+    transition: text-shadow 200ms ease-in-out;
+}
+.quick-launch-widget:hover .icon {
+    text-shadow: 0 0 10px var(--blue);
+}
