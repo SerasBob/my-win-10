@@ -102,10 +102,10 @@ widgets:
     options:
       label: "<span>{icon}</span> {temp}"
       label_alt: "<span>{icon}</span> {location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
-      api_key: 'f59a8bfa9e6f411e9bf150801260307'
+      api_key: '#put your api here'
       update_interval: 600 #Update interval in seconds, Min 600
       hide_decimal: true
-      location: '"Phu Tho, PT, VN'
+      location: '"Phu Tho, PT, VN' #change your location
       callbacks:
         on_left: "toggle_label"
       icons:
@@ -195,7 +195,7 @@ widgets:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
       label: "<span>\udb83\ude09</span>"
-      image_path: "C:\\Users\\DELL\\.config\\Wallpapers"
+      image_path: "#put your image patch here" #format for someone who dk C:\\Users\\your username\\anyshit\\anyshits
       change_automatically: false
       update_interval: 60
       gallery:
