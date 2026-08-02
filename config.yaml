@@ -105,7 +105,7 @@ widgets:
       api_key: '#put your api here'
       update_interval: 600 #Update interval in seconds, Min 600
       hide_decimal: true
-      location: '"Phu Tho, PT, VN' #change your location
+      location: '"put your location here' #change your location format 'Los Angeles, CA, USA'
       callbacks:
         on_left: "toggle_label"
       icons:
